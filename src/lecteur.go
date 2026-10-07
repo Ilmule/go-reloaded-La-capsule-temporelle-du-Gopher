@@ -29,8 +29,8 @@ func lecteur() {
 		cleaned := cleanSpaces(line)
 
 		//processed := processLevel1(cleaned)
-		processed := processLevel2(processLevel1(cleaned))
-		// processed := processLevel3(processLevel2(processLevel1(cleaned))
+		// processed := processLevel2(processLevel1(cleaned))
+		 processed := processLevel3(processLevel2(processLevel1(cleaned)))
 		// processed := processLevel4(processLevel3(processLevel2(processLevel1(cleaned))))
 		// processed := processLevel5(processLevel4(processLevel3(processLevel2(processLevel1(cleaned)))))
 
