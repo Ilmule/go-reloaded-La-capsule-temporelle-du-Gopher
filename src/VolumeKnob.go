@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func processLevel1(line string) string {
+func processLevel2(line string) string {
 	if line == "" {
 		return ""
 	}
@@ -17,7 +17,7 @@ func processLevel1(line string) string {
 		token := tokens[i]
 
 		switch token {
-		case "(hex)":
+		case "(up)":
 			if len(result) > 0 {
 				lastIdx := len(result) - 1
 				val, err := strconv.ParseInt(result[lastIdx], 16, 64)
@@ -26,7 +26,7 @@ func processLevel1(line string) string {
 				}
 			}
 
-		case "(bin)":
+		case "(low)":
 			if len(result) > 0 {
 				lastIdx := len(result) - 1
 				val, err := strconv.ParseInt(result[lastIdx], 2, 64)
@@ -34,7 +34,14 @@ func processLevel1(line string) string {
 					result[lastIdx] = strconv.FormatInt(val, 10)
 				}
 			}
-		
+		case "(cap)":
+			if len(result) > 0 {
+				lastIdx := len(result) - 1
+				val, err := strconv.ParseInt(result[lastIdx], 2, 64)
+				if err == nil {
+					result[lastIdx] = strconv.FormatInt(val, 10)
+				}
+			}
 		default:
 			result = append(result, token)
 		}
