@@ -1,11 +1,11 @@
-package main
+package src
 
 import (
 	"strconv"
 	"strings"
 )
 
-func processLevel1(line string) string {
+func ProcessLevel1(line string) string {
 	if line == "" {
 		return ""
 	}

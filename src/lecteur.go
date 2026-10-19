@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func lecteur() {
+func Lecteur() {
 	args := os.Args[1:]
 	if len(args) != 2 {
 		fmt.Fprintln(os.Stderr, "Usage: go run . <fichier_entree> <fichier_sortie>")
@@ -26,13 +26,13 @@ func lecteur() {
 	var resultLines []string
 
 	for _, line := range lines {
-		cleaned := cleanSpaces(line)
+		cleaned := CleanSpaces(line)
 
 		//processed := processLevel1(cleaned)
 		// processed := processLevel2(processLevel1(cleaned))
 		//  processed := processLevel3(processLevel2(processLevel1(cleaned)))
 		// processed := processLevel4(processLevel3(processLevel2(processLevel1(cleaned))))
-		 processed := processLevel5(processLevel4(processLevel3(processLevel2(processLevel1(cleaned)))))
+		 processed := ProcessLevel5(ProcessLevel4(ProcessLevel3(ProcessLevel2(ProcessLevel1(cleaned)))))
 
 		resultLines = append(resultLines, processed)
 	}
@@ -45,7 +45,7 @@ func lecteur() {
 	}
 }
 
-func cleanSpaces(s string) string {
+func CleanSpaces(s string) string {
 	fields := strings.Fields(s)
 	return strings.Join(fields, " ")
 }

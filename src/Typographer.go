@@ -1,10 +1,10 @@
-package main
+package src
 
 import (
 	"unicode"
 )
 
-func processLevel3(line string) string {
+func ProcessLevel3(line string) string {
 	if line == "" {
 		return ""
 	}
@@ -39,7 +39,7 @@ func processLevel3(line string) string {
 		}
 	}
 
-	return cleanSpaces(string(result))
+	return CleanSpaces(string(result))
 }
 
 func isPunctuation(r rune) bool {

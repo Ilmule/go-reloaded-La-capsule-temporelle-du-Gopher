@@ -1,11 +1,11 @@
-package main
+package src
 
 import (
 	"strings"
 	"unicode"
 )
 
-func processLevel5(line string) string {
+func ProcessLevel5(line string) string {
 	if line == "" {
 		return ""
 	}

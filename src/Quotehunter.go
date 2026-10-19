@@ -1,10 +1,10 @@
-package main
+package src
 
 import (
 	"strings"
 )
 
-func processLevel4(line string) string {
+func ProcessLevel4(line string) string {
 	if line == "" {
 		return ""
 	}
