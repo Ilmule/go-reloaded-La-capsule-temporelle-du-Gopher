@@ -27,13 +27,7 @@ func Lecteur() {
 
 	for _, line := range lines {
 		cleaned := CleanSpaces(line)
-
-		//processed := processLevel1(cleaned)
-		// processed := processLevel2(processLevel1(cleaned))
-		//  processed := processLevel3(processLevel2(processLevel1(cleaned)))
-		// processed := processLevel4(processLevel3(processLevel2(processLevel1(cleaned))))
-		 processed := ProcessLevel5(ProcessLevel4(ProcessLevel3(ProcessLevel2(ProcessLevel1(cleaned)))))
-
+		processed := ProcessLevel5(ProcessLevel4(ProcessLevel3(ProcessLevel2(ProcessLevel1(cleaned)))))
 		resultLines = append(resultLines, processed)
 	}
 
